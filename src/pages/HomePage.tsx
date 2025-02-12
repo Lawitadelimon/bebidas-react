@@ -15,7 +15,7 @@ const recipes = useAppStore(state => state.recipes)
         {
             hasRecipes? (
                 <>
-                <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 my-10 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-3 my-10 gap-10">
                     {
                         recipes.drinks.map(drink => (
                             <DrinkCard 
