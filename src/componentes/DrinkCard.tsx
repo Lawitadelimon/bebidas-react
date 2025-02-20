@@ -21,10 +21,10 @@ export default function DrinkCard({ drink }: DrinkCardProps) {
             <h2 className="text-2xl truncate font-black">
                 {drink.strDrink}
             </h2>
-            <button
+            <button 
                 type="button"
                 onClick={() => selectRecipe(drink.idDrink)}
-                className="bg-orange-400 hover:bg-orange-500 mt-5 w-full p-3 font-bold text-white text-lg"
+                className="flex justify-center bg-orange-400 hover:bg-orange-500 mt-4 w-40 p-3 font-bold text-white text-lg rounded-lg"
                 >Ver Receta</button>
         </div>
     </div>

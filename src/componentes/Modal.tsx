@@ -1,5 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { useAppStore } from '../stores/useAppStore';
 import { Recipe } from '../types';
 
@@ -29,7 +29,7 @@ export default function Modal() {
     return (
     <>
         <Transition appear show={modal} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-20" onClose={closeModal}>
 
         <Transition.Child
             as={Fragment}
@@ -54,7 +54,7 @@ export default function Modal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-orange-100 px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
                 <Dialog.Title as="h3" className="text-gray-900 text-4xl font-extrabold my-5 text-center">
                 {selectedRecipe.strDrink}
                 
@@ -72,17 +72,17 @@ export default function Modal() {
                     Instrucciones
                 </Dialog.Title>
                 <p className='text-lg'>{selectedRecipe.strInstructions}</p>
-                <div>
+                <div className="flex justify-center space-x-10 ">
                     <button 
                     onClick={closeModal}
-                    className='bg-gray-400 hover:bg-gray-500  w-full p-3 rounded text-white uppercase'
-                    type="button">Cerrar Modal</button>
+                    className='bg-gray-400 hover:bg-gray-500  mt-4 p-3 rounded text-white font-bold '
+                    type="button">Cerrar</button>
                     <button
                     onClick={() => {
                         addFavorites(selectedRecipe)
                         closeModal()
                     } }
-                    className='bg-orange-400 hover:bg-orange-700 w-full p-3 rounded text-white uppercase'
+                    className='bg-orange-400 hover:bg-orange-500 mt-4  p-3 rounded text-white font-bold '
                     type="button"> {favoriteExist(selectedRecipe.idDrink)?
                         'Agregar a ':
                         'Eliminar de '

@@ -12,7 +12,7 @@ export default function FavoritePage(){
                 {
                     hasFavorites? (
                         <>
-                        <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-3 my-10 gap-10">
+                        <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-3 my-10 gap-10 bg-orange-200">
                             {
                                 favorites.map(drink => (
                                     <DrinkCard 
@@ -21,9 +21,10 @@ export default function FavoritePage(){
                                 ))
                             }
                         </div>
+                        
                         </>
                     ): (
-                        <p>Aqui se muestran los favoritos, por el momento no tienes</p>
+                        <p>Por el momento no has agregado drinks a tus favoritos ☹️</p>
                     )
                 }
                 </>

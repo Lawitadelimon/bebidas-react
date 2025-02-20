@@ -29,25 +29,25 @@ function handleChange(e: ChangeEvent<HTMLInputElement> |
         e.preventDefault()
 
         if(Object.values(searchFilters).includes('')){
-            console.log('no dejar campos en blanco')
+            
             return
         }
     searchRecipes(searchFilters)
     }
 
     return (
-        <header className={ isHome? 'bg-header bg-cover bg-center': 'bg-slate-800' }>
-            <div className="mx-auto container px-5 py-16">
+        <header className={ isHome? 'bg-header bg-cover bg-center': 'bg-black' }>
+            <div className="mx-5 container px-0    py-1">
                 <div className="flex justify-between items-center">
                     <div>
-                        <img className="w-32" src="/logo.svg" alt="logotipo" />
+                        <img className="w-32 " src="/logos.png" alt="logotipo" />
                     </div>
 
                     <nav className="flex gap-4">
                         <NavLink 
                             className={({ isActive }) => 
                                 isActive ?
-                                "text-orange-500 uppercase font-bold":
+                                "text-orange-400 uppercase font-bold":
                                 "text-white uppercase font-bold"}
                         to='/'>Home</NavLink>
                         <NavLink 
@@ -61,11 +61,12 @@ function handleChange(e: ChangeEvent<HTMLInputElement> |
                 { isHome && (
                 <form 
                 onSubmit={handleSubmit}
-                className="md:w-1/2 2xl:w-1/3 bg-orange-400 my-32 p-10 rounded-lg shadow space-y-6">
+                className="ml-auto lg:ml-120 md:w-1/3 2xl:w-1/2 bg-orange-200 my-32 p-10 rounded-lg shadow space-y-6"
+>
                 <div className="space-y-4">
                 <label 
                     htmlFor="ingredient"
-                    className="block text-white uppercase font-extrabold text-lg">
+                    className="block text-black uppercase font-extrabold text-lg">
                     Nombre o Ingredientes
                     </label>
                     <input 
@@ -80,7 +81,7 @@ function handleChange(e: ChangeEvent<HTMLInputElement> |
                 <div className="space-y-4">
                 <label 
                     htmlFor="category"
-                    className="block text-white uppercase font-extrabold text-lg">
+                    className="block text-black uppercase font-extrabold text-lg ">
                     Categoría
                     </label>
                     <select 
@@ -101,7 +102,7 @@ function handleChange(e: ChangeEvent<HTMLInputElement> |
                 </div>
                 <input 
                 type="submit"
-                className="cursor-pointer bg-orange-800 hover:bg-orange-900 text-white font-extrabold w-full p-2 rounded-lg uppercase" 
+                className="cursor-pointer bg-orange-400 hover:bg-orange-500 text-white font-bold w-45 p-3 rounded-lg  block mx-auto" 
                 value="Buscar Recetas" />
             </form>
                 )}
