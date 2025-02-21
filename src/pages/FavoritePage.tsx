@@ -8,11 +8,11 @@ export default function FavoritePage(){
     const hasFavorites = useMemo(() => favorites.length > 0, [favorites])
     return (
         <>
-                <h1 className="text-6xl font-extrabold">Recetas</h1>
+                <h1 className="text-6xl font-extrabold">Recetas Agregadas</h1>
                 {
                     hasFavorites? (
                         <>
-                        <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-3 my-10 gap-10 bg-orange-200">
+                        <div className="grid grid-cols-1 md:grid-cols-4 2xl:grid-cols-3 my-10 gap-10 bg-gray-300">
                             {
                                 favorites.map(drink => (
                                     <DrinkCard 

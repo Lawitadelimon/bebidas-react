@@ -24,7 +24,7 @@ export default function DrinkCard({ drink }: DrinkCardProps) {
             <button 
                 type="button"
                 onClick={() => selectRecipe(drink.idDrink)}
-                className="flex justify-center bg-orange-400 hover:bg-orange-500 mt-4 w-40 p-3 font-bold text-white text-lg rounded-lg"
+                className="flex justify-center bg-yellow-400 hover:bg-yellow-500 mt-4 w-40 p-3 font-bold text-black text-lg rounded-2xl"
                 >Ver Receta</button>
         </div>
     </div>
